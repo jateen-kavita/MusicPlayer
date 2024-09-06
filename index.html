@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold">Music Player</h1>
+        <label class="flex items-center">
+          <span class="mr-2">Dark</span>
+          <input
+            type="checkbox"
+            id="toggleTheme"
+            class="toggle-checkbox hidden"
+          />
+          <label
+            for="toggleTheme"
+            class="toggle-label block w-10 h-6 rounded-full bg-gray-300"
+          ></label>
+        </label>
+      </div>
+      <div class="flex space-x-4">
+        <div class="w-1/4 bg-blue-200 p-4 rounded-lg">
+          <div class="mb-4">
+            <label for="genre" class="block text-lg font-bold"
+              >Filter by Genre:</label
+            >
+            <select
+              id="genre"
+              class="block w-full mt-2 p-2 rounded-lg border border-gray-300"
+            >
+              <option value="All">All</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+            </select>
+          </div>
+          <h2 class="text-xl font-bold mb-2">All Songs</h2>
+          <ul id="songList" class="space-y-2">
+            <!-- List of songs will be dynamically generated -->
+          </ul>
+        </div>
+        <div class="w-2/4 bg-blue-100 p-4 rounded-lg">
+          <div id="player" class="bg-blue-200 p-4 rounded-lg">
+            <img
+              id="albumArt"
+              src="https://i.ytimg.com/vi/VwomfkFDvH4/sddefault.jpg"
+              alt="Album Art"
+              class="w-full rounded-lg mb-4"
+            />
+            <h3 id="songTitle" class="text-lg font-bold">Shape Of You</h3>
+            <p id="songArtist" class="text-gray-600">Ed Sheeran</p>
+            <audio id="audioPlayer" controls class="w-full mt-4">
+              <source src="song1.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            <div class="flex justify-between mt-4">
+              <button
+                id="prevSong"
+                class="p-2 bg-gray-600 text-white rounded-lg"
+              >
+                Previous
+              </button>
+              <button
+                id="addToPlaylist"
+                class="p-2 bg-purple-500 text-white rounded-lg"
+              >
+                Add to Playlist
+              </button>
+              <button
+                id="nextSong"
+                class="p-2 bg-gray-600 text-white rounded-lg"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="w-1/4 bg-blue-200 p-4 rounded-lg">
+          <div class="mb-4">
+            <input
+              type="text"
+              id="playlistName"
+              placeholder="Enter playlist name"
+              class="w-full p-2 rounded-lg border border-gray-300"
+            />
+            <button
+              id="createPlaylist"
+              class="mt-2 w-full p-2 bg-purple-500 text-white rounded-lg"
+            >
+              Create Playlist
+            </button>
+          </div>
+          <h2 class="text-xl font-bold">Current Playlist Songs </h2>
+          <ul id="currentPlaylist" class="space-y-2">
+            <!-- List of songs in the current playlist will be dynamically generated -->
+          </ul>
+          <h2 class="text-xl font-bold mt-4">My Playlists</h2>
+          <ul id="allPlaylists" class="space-y-2">
+            <!-- List of playlists will be dynamically generated -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
